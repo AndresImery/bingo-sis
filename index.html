@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+    <div id="div-form">
+        <div id="div-title">
+            <h1 id="title">BINGO</h1>
+        </div>
+        <div id="div-main">
+
+            <form id="initial-form" onsubmit="start();return false;" action="./game.html">
+                <div id="initial-form__select">
+                    <label id="choose-label" for="select-size">Tamaño del cartón:</label>
+                    <select id="select-size" name="size">
+                        <option value="3">3x3</option>
+                        <option value="4">4x4</option>
+                        <option value="5">5x5</option>
+                    </select>
+                </div>
+                <label class="player-input" for="player1">Jugador 1 Nombre:</label>
+                <input class="player-input player-name" type="text" id="player1" name="player-1" value="Andres" required>
+
+                <label class="player-input" for="player2">Jugador 2 Nombre:</label>
+                <input class="player-input player-name" type="text" id="player2" name="player-2" value="Juan" required>
+
+                <label class="player-input" for="player3">Jugador 3 Nombre:</label>
+                <input class="player-input player-name" type="text" id="player3" name="player-3" value="Luis" required>
+
+                <label class="player-input" for="player4">Jugador 4 Nombre:</label>
+                <input class="player-input player-name" type="text" id="player4" name="player-4" value="Pedro" required>
+
+                <input id="input-button" type="submit" value="Comenzar">
+            </form>
+        </div>
+    </div>
+
+    <!-- <section class="section-1">
+        <div>
+            <table class="bingo">
+                <tr>
+                    <th>B</th>
+                    <th>I</th>
+                    <th>N</th>
+                    <th>G</th>
+                    <th>O</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <section class="section-2">
+        <div>
+
+        </div>
+    </section> -->
+</body>
+<script src="./script.js"></script>
+</html>

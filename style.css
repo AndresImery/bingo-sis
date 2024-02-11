@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0094d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    height: 100vh;
+}
+
+#div-main {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    background-color: #f93416;
+}
+
+#div-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#div-title {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#title {
+    font-family: 'Sixtyfour';
+    margin: 0;
+    font-size: 15dvw;
+    height: 100%;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+#choose-label {
+    margin: 0;
+}
+
+#initial-form__select {
+    padding:10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    /* height: 40px; */
+}
+
+.player-input {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 4px;
+}
+
+.player-input input {
+    display: flex;
+    justify-content: center;
+}
+
+#input-button {
+    display: flex;
+    padding: 10px;
+    justify-self: end;
+    background-color: #f5d400;
+    border: 0;
+    border-radius: 5px;
+    margin: 20px 0 10px 0;
+    justify-self: flex-end;
+    font-weight: bolder;
+    /* box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2); */
+    border: dashed;
+
+}
+#input-button:hover {
+    box-shadow: -2px 2px 0 0 #f5d400;
+    transform: translate(2px, -2px);
+}
+
+#input-button:active {
+    box-shadow: none;
+    transform: translate(-2px, 2px);
+}
+
+#div-main__select {
+    max-width: fit-content;
+    display: inline-flex;
+
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+select {
+    padding: 5px;
+    justify-self: flex-end;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.273);
+    border-radius: 2px;
+}::selection{
+    color: green;
+}
