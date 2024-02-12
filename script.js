@@ -1,6 +1,8 @@
 const form = document.getElementById('body').innerHTML;
 let shuffledNumbers = resetBall();
+let pastnumbers = []
 let counter = 25
+const players = []
 
 function resetBall(numeros) {
     numeros = new Set();
@@ -15,12 +17,12 @@ function resetBall(numeros) {
 function start() {
     const boardSize = parseInt(document.getElementById('select-size').value);
     const InputNames = document.getElementsByClassName('player-name');
-    const players = [];
+    // const players = [];
     for (const InputName of InputNames) {
 
         // BUSCAR JUGADOR Y SU SCORE EN LOCAL STORAGE
 
-        let player = { name: InputName.value, carton: createMatrixNxN(boardSize), score: 0 }; // editar score
+        let player = { name: InputName.value, carton: createMatrixNxN(boardSize), score: 0 , cartonHTML: ""}; // editar score
         players.push(player);
 
 
@@ -75,20 +77,24 @@ function start() {
     // cardboard.innerHTML = '<h1 id="bingo-name">BINGO</h1>';
 
     let cartonesHTML = [];
+    const buttons = document.getElementById('right-div')
     for (const player of players) {
-        
+        buttons.innerHTML += `<button class="input-button players" onclick="playerChange('${player.name}');" id="${player.name}">${player.name}</button>`;
         let cartonHTML = ""
         for (const i in player.carton) {
             cartonHTML += '<div class="row">'
             console.log(cartonHTML);
             for (const num of player.carton[i]) {
-                cartonHTML += '<div class="cell">' + num + '</div>'
+                cartonHTML += `<div class="cell" id='num'=>${num}</div>`
             }
             cartonHTML += '</div>';
         }
         cartonesHTML.push(cartonHTML);
+        player.cartonHTML = cartonHTML
+
     }
-    cardboard.innerHTML = '<h1 id="bingo-name">BINGO</h1>' + cartonesHTML[0];
+    cardboard.innerHTML = '<h1 id="bingo-name">BINGO</h1>' + players[0].cartonHTML;
+    document.getElementById(players[0].name).style.backgroundColor = "purple"
 
 }
 
@@ -121,10 +127,31 @@ function proxima() {
     if (counter > 0) {
         counter--;
         document.getElementById('counter-num').innerText = counter;
-        document.getElementById('number-p').innerText = shuffledNumbers.shift()
+        let number = shuffledNumbers.shift();
+        document.getElementById('number-p').innerText = number
+        pastnumbers.push(number);
+        document.getElementById(number).style.backgroundColor = '#308028';
     } else {
         alert('BLAHBLAH')
         quit()
     }
     
+}
+
+function playerChange(name) {
+    buttons = document.getElementsByClassName('players');
+    for (const button of buttons) {
+        button.style.backgroundColor = "#f93416";
+    }
+
+    button2 = document.getElementById(name);
+    button2.style.backgroundColor = 'purple';
+
+    cardboard = document.getElementById('cardboard-div')
+
+    for (const player of players) {
+        if (player.name == name) {
+            cardboard.innerHTML = '<h1 id="bingo-name">BINGO</h1>' + player.cartonHTML;
+        }
+    }
 }
