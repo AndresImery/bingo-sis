@@ -2,7 +2,7 @@ const form = document.getElementById('body').innerHTML;
 let shuffledNumbers = resetBall();
 let pastnumbers = []
 let counter = 25
-const players = []
+let players = []
 
 function resetBall(numeros) {
     numeros = new Set();
@@ -85,7 +85,7 @@ function start() {
             cartonHTML += '<div class="row">'
             console.log(cartonHTML);
             for (const num of player.carton[i]) {
-                cartonHTML += `<div class="cell" id='num'=>${num}</div>`
+                cartonHTML += `<div class="cell" id='${num}'=>${num}</div>`
             }
             cartonHTML += '</div>';
         }
@@ -118,9 +118,15 @@ function createMatrixNxN(n) {
 }
 
 function quit() {
+    for (const button of document.getElementsByClassName('players')) {
+        button.remove();
+    }
+    players = [];
     document.getElementById('div-game').remove();
     body.innerHTML = form;
     shuffledNumbers = resetBall();
+    counter = 25;
+    pastnumbers = [];
 }
 
 function proxima() {
@@ -130,9 +136,12 @@ function proxima() {
         let number = shuffledNumbers.shift();
         document.getElementById('number-p').innerText = number
         pastnumbers.push(number);
-        document.getElementById(number).style.backgroundColor = '#308028';
+        let cell = document.getElementById(number);
+        if (cell != null) {
+            cell.style.backgroundColor = 'purple'//'#308028';
+        }
     } else {
-        alert('BLAHBLAH')
+        alert('SE ACABO')
         quit()
     }
     
@@ -152,6 +161,15 @@ function playerChange(name) {
     for (const player of players) {
         if (player.name == name) {
             cardboard.innerHTML = '<h1 id="bingo-name">BINGO</h1>' + player.cartonHTML;
+        }
+    }
+
+    let cells = document.getElementsByClassName('cell');
+    for (const cell of cells) {
+        for (const num of pastnumbers) {
+            if (cell.id == num) {
+                cell.style.backgroundColor = 'purple';
+            }
         }
     }
 }
