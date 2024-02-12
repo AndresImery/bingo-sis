@@ -70,6 +70,7 @@ function start() {
             <button class="input-button" onclick="quit();">QUIT</button>
             <button class="input-button" onclick="proxima();">PROXIMA BOLA</button>
         </div>
+        <div id="button-players"></div>
     </div>
 </div>
     `
@@ -77,7 +78,7 @@ function start() {
     // cardboard.innerHTML = '<h1 id="bingo-name">BINGO</h1>';
 
     let cartonesHTML = [];
-    const buttons = document.getElementById('right-div')
+    const buttons = document.getElementById('button-players')
     for (const player of players) {
         buttons.innerHTML += `<button class="input-button players" onclick="playerChange('${player.name}');" id="${player.name}">${player.name}</button>`;
         let cartonHTML = ""
@@ -126,7 +127,7 @@ function quit() {
     body.innerHTML = form;
     shuffledNumbers = resetBall();
     counter = 25;
-    pastnumbers = [];
+    numbers = [];
 }
 
 function proxima() {

@@ -279,7 +279,18 @@ input[type="text"] {
 
 .players {
     background-color: red;
+    width: 100px;
+}
 
+#button-players {
+    display: flex;
+    width: 100vw;
+}
+
+.players {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 600px) {
@@ -290,7 +301,7 @@ input[type="text"] {
     }
 
     #cardboard-div, #number-div {
-        width: 199vw;
+        width: 99vw;
     }
 
     #cardboard-div {
@@ -306,11 +317,31 @@ input[type="text"] {
     }
 
     #buttons-div {
-        height: 10vh;
+        height: 20vh;
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .cell {
         width: 13%;
     }
 
+    .right-div {
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+        width: 90vw;
+    }
+
+    #button-players {
+        display: flex;
+        width: 100vw;
+    }
+
+    .players {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
