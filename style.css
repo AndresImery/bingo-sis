@@ -4,9 +4,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
-    height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 99vh;
 }
 
 #div-main {
@@ -66,7 +66,7 @@ body {
     justify-content: center;
 }
 
-#input-button {
+.input-button {
     display: flex;
     padding: 10px;
     justify-self: end;
@@ -76,16 +76,15 @@ body {
     margin: 20px 0 10px 0;
     justify-self: flex-end;
     font-weight: bolder;
-    /* box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.2); */
     border: dashed;
 
 }
-#input-button:hover {
+.input-button:hover {
     box-shadow: -2px 2px 0 0 #f5d400;
     transform: translate(2px, -2px);
 }
 
-#input-button:active {
+.input-button:active {
     box-shadow: none;
     transform: translate(-2px, 2px);
 }
@@ -118,6 +117,195 @@ input[type="text"] {
     padding: 5px;
     border: 1px solid rgba(0, 0, 0, 0.273);
     border-radius: 2px;
-}::selection{
-    color: green;
+}
+
+#div-game {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#div-game__upper {
+    display: flex;
+    margin-bottom: 0;
+    padding: 0;
+    height: 85vh;
+    width: 100vw;
+    justify-content: space-around;
+}
+
+#cardboard-div {
+    display: flex;
+    height: 100%;
+    width: 700px;
+    /* margin: 0 */
+    padding: 0;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: black solid;
+    border-radius: 50px;;
+    margin: 0 10vw;
+    background-color: #f93416;
+}
+
+#bingo-name {
+    font-family: 'Sixtyfour';
+    padding: 0;
+    /* margin: ; */
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    justify-self: flex-start;
+    font-size: 8vw;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cell {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    width: 5vw;
+    margin: 2px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5d400;
+    border: 1px solid black;
+    font-size: 3dvw;
+}
+
+
+#number-div {
+    display: flex;
+    height: 100%;
+    width: 20vw;
+    justify-content: center;
+    align-items: center;
+}
+
+#ball-div {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.2) inset, 10px 10px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+#number-p {
+    display: flex;
+    font-family: 'Sixtyfour';
+    font-size: 30px;
+}
+
+#buttons-div {
+    display: flex;
+    padding: 0 5vw;
+    height: 10vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#right-div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    margin: 5px;
+    height: 5vh;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #f5d400;
+}
+
+/* .buttons {
+    margin: 5px;
+    height: 5vh;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #f5d400;
+    font-weight: bold;
+} */
+
+#counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #308028;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 8px 20px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border: #56d726 dashed;
+}
+
+#counter h3 {
+    margin: 0;
+    padding: 5px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#counter p {
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+    #div-game__upper {
+        flex-wrap: wrap;
+        height: 80vh;
+        align-items: center;
+    }
+
+    #cardboard-div, #number-div {
+        width: 199vw;
+    }
+
+    #cardboard-div {
+        display: flex;
+        height: 60vh;
+        padding: 0;
+        margin: 10px;
+        align-items: center;
+    }
+
+    #number-div {
+        height: 20vh;
+    }
+
+    #buttons-div {
+        height: 10vh;
+    }
+
+    .cell {
+        width: 13%;
+    }
+
 }

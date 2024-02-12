@@ -10,14 +10,14 @@
    
 </head>
 
-<body>
+<body id="body">
     <div id="div-form">
         <div id="div-title">
             <h1 id="title">BINGO</h1>
         </div>
         <div id="div-main">
 
-            <form id="initial-form" onsubmit="start();return false;" action="./game.html">
+            <form id="initial-form" onsubmit="start();return false;">
                 <div id="initial-form__select">
                     <label id="choose-label" for="select-size">Tamaño del cartón:</label>
                     <select id="select-size" name="size">
@@ -38,7 +38,7 @@
                 <label class="player-input" for="player4">Jugador 4 Nombre:</label>
                 <input class="player-input player-name" type="text" id="player4" name="player-4" value="Pedro" required>
 
-                <input id="input-button" type="submit" value="Comenzar">
+                <input class="input-button" type="submit" value="Comenzar">
             </form>
         </div>
     </div>
@@ -46,7 +46,7 @@
     <!-- <section class="section-1">
         <div>
             <table class="bingo">
-                <tr>
+                <tr class>
                     <th>B</th>
                     <th>I</th>
                     <th>N</th>
